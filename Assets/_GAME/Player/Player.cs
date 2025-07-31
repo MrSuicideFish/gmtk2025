@@ -70,11 +70,18 @@ namespace _GAME
             {
                 EndHoverInteractable();
             }
-            
-            if (m_lastInteractable != null
-                && Input.GetMouseButtonDown(0))
+
+            if (m_lastInteractable != null)
             {
-                m_lastInteractable.Interact();
+                if (Input.GetMouseButtonUp(0))
+                {
+                    m_lastInteractable.EndInteract();
+                }
+                
+                if (Input.GetMouseButtonDown(0))
+                {
+                    m_lastInteractable.BeginInteract();
+                }
             }
         }
     }

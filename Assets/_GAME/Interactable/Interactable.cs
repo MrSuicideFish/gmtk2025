@@ -6,26 +6,22 @@ namespace _GAME
     {
         public string DisplayName = "interactable";
         public string Instruction = string.Empty;
-
-        public void Interact()
-        {
-        }
-
-        public void BeginHover()
+        
+        public virtual void BeginHover()
         {
             
         }
 
-        public void EndHover()
+        public virtual void EndHover()
         {
         }
 
-        public void BeginInteract()
+        public virtual void BeginInteract()
         {
             
         }
 
-        public void EndInteract()
+        public virtual void EndInteract()
         {
             
         }

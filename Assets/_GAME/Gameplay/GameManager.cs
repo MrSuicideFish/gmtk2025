@@ -29,7 +29,7 @@ namespace _GAME.Gameplay
         
         void LoadRoom(int roomIndex)
         {
-            Room roomToLoad = m_roomPrefabs[m_currentRoom];
+            Room roomToLoad = m_roomPrefabs[roomIndex];
             
             Vector3 spawnPos = new Vector3();
             if (roomIndex == 0)

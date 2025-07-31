@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerPrefab: {fileID: 4786439766013862, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
   m_roomPrefabs:
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
+  - {fileID: 714549254433668975, guid: 59bd7140b91c6d2479e4901e229592cd, type: 3}
   - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
   - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
   - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19
