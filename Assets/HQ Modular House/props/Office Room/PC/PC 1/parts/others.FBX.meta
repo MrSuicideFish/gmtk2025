@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: e8d865a874e3ba249b66401cec2c3cb9
+timeCreated: 1495108204
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box002
+    100002: Disketa
+    100004: Disketa001
+    100006: Disketa002
+    100008: Disketnik
+    100010: Disketnik001
+    100012: kaseta
+    100014: kaseta001
+    100016: kaseta002
+    100018: kasetnik
+    100020: //RootNode
+    400000: Box002
+    400002: Disketa
+    400004: Disketa001
+    400006: Disketa002
+    400008: Disketnik
+    400010: Disketnik001
+    400012: kaseta
+    400014: kaseta001
+    400016: kaseta002
+    400018: kasetnik
+    400020: //RootNode
+    2300000: Disketa
+    2300002: Disketa001
+    2300004: Disketa002
+    2300006: Disketnik
+    2300008: Disketnik001
+    2300010: kaseta
+    2300012: kaseta001
+    2300014: kaseta002
+    2300016: kasetnik
+    3300000: Disketa
+    3300002: Disketa001
+    3300004: Disketa002
+    3300006: Disketnik
+    3300008: Disketnik001
+    3300010: kaseta
+    3300012: kaseta001
+    3300014: kaseta002
+    3300016: kasetnik
+    4300000: Disketa
+    4300002: Disketnik
+    4300004: kaseta
+    4300006: kasetnik
+    4300008: Disketnik001
+    4300010: Disketa001
+    4300012: Disketa002
+    4300014: kaseta001
+    4300016: kaseta002
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 107018
+  packageName: HQ Modular House Interior Pack
+  packageVersion: 1.0
+  assetPath: Assets/HQ Modular House/props/Office Room/PC/PC 1/parts/others.FBX
+  uploadId: 224508
