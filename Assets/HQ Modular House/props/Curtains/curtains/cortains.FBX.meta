@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: 6c39d0e378996f14c8d6ad41ca87818f
+timeCreated: 1495371557
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Chasti kaniza 002
+    100004: Chasti kaniza 1
+    100006: Chasti karniza 003
+    100008: Chasti karniza 2
+    100010: karnizik
+    100012: Object541
+    100014: Object542
+    100016: Shtora  3
+    100018: Shtora  5
+    100020: Shtora 1
+    100022: Shtora 2
+    100024: Shtora 4
+    100026: //RootNode
+    400000: Box001
+    400002: Chasti kaniza 002
+    400004: Chasti kaniza 1
+    400006: Chasti karniza 003
+    400008: Chasti karniza 2
+    400010: karnizik
+    400012: Object541
+    400014: Object542
+    400016: Shtora  3
+    400018: Shtora  5
+    400020: Shtora 1
+    400022: Shtora 2
+    400024: Shtora 4
+    400026: //RootNode
+    2300000: Chasti kaniza 002
+    2300002: Chasti kaniza 1
+    2300004: Chasti karniza 003
+    2300006: Chasti karniza 2
+    2300008: karnizik
+    2300010: Shtora  3
+    2300012: Shtora  5
+    2300014: Shtora 1
+    2300016: Shtora 2
+    2300018: Shtora 4
+    3300000: Chasti kaniza 002
+    3300002: Chasti kaniza 1
+    3300004: Chasti karniza 003
+    3300006: Chasti karniza 2
+    3300008: karnizik
+    3300010: Shtora  3
+    3300012: Shtora  5
+    3300014: Shtora 1
+    3300016: Shtora 2
+    3300018: Shtora 4
+    4300000: karnizik
+    4300002: Chasti kaniza 1
+    4300004: Chasti karniza 2
+    4300006: Shtora 1
+    4300008: Shtora 2
+    4300010: Shtora  3
+    4300012: Shtora 4
+    4300014: Shtora  5
+    4300016: Chasti kaniza 002
+    4300018: Chasti karniza 003
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 107018
+  packageName: HQ Modular House Interior Pack
+  packageVersion: 1.0
+  assetPath: Assets/HQ Modular House/props/Curtains/curtains/cortains.FBX
+  uploadId: 224508
