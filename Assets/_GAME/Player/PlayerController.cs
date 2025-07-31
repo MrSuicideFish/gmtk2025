@@ -1,9 +1,10 @@
-using Unity.Cinemachine;
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Rigidbody m_rigidbody;
+
+    [SerializeField] private CharacterController m_characterController;
     
     [SerializeField] private float m_speed = 5f;
     
@@ -24,9 +25,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(m_rigidbody == null)
+        if(m_characterController == null)
         {
-            Debug.LogError("Camera or Rigidbody is not assigned.");
+            Debug.LogError("Camera or CharController is not assigned.");
             return;
         }
 
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_rigidbody.linearVelocity =
-            new Vector3(m_moveDirection.x, m_rigidbody.linearVelocity.y, m_moveDirection.z) * m_speed;
+        var collisionFlags = m_characterController.Move(
+            new Vector3(m_moveDirection.x, Physics.gravity.y, m_moveDirection.z) * m_speed * Time.deltaTime);
     }
 }
