@@ -231,7 +231,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fpsHud: {fileID: 951454043035043064, guid: e8a9a212f04783146acebf723998def9, type: 3}
-  m_fpsCamera: {fileID: 4194131385272929220}
+  m_interactMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_interactDistance: 2.5
 --- !u!143 &8415367704131867578
 CharacterController:
   m_ObjectHideFlags: 0

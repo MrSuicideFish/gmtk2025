@@ -1,7 +1,7 @@
 ﻿using Unity.Cinemachine;
 using UnityEngine;
 
-namespace _GAME.Player
+namespace _GAME
 {
     [AddComponentMenu("Cinemachine/Procedural/Rotation Control/Player Look")]
     [SaveDuringPlay]
