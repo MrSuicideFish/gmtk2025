@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: 52ef916f9ea563c4684ed10854c4c24e
+timeCreated: 1487424022
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: DAMAGED WALLPAPER004
+    100002: DAMAGED WALLPAPER005
+    100004: DAMAGED WALLPAPER1
+    100006: DAMAGED WALLPAPER2
+    100008: DAMAGED WALLPAPER3
+    100010: //RootNode
+    400000: DAMAGED WALLPAPER004
+    400002: DAMAGED WALLPAPER005
+    400004: DAMAGED WALLPAPER1
+    400006: DAMAGED WALLPAPER2
+    400008: DAMAGED WALLPAPER3
+    400010: //RootNode
+    2300000: DAMAGED WALLPAPER004
+    2300002: DAMAGED WALLPAPER005
+    2300004: DAMAGED WALLPAPER1
+    2300006: DAMAGED WALLPAPER2
+    2300008: DAMAGED WALLPAPER3
+    3300000: DAMAGED WALLPAPER004
+    3300002: DAMAGED WALLPAPER005
+    3300004: DAMAGED WALLPAPER1
+    3300006: DAMAGED WALLPAPER2
+    3300008: DAMAGED WALLPAPER3
+    4300000: DAMAGED WALLPAPER3
+    4300002: DAMAGED WALLPAPER2
+    4300004: DAMAGED WALLPAPER1
+    4300006: DAMAGED WALLPAPER004
+    4300008: DAMAGED WALLPAPER005
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 107018
+  packageName: HQ Modular House Interior Pack
+  packageVersion: 1.0
+  assetPath: Assets/HQ Modular House/interior/other/DAMAGED WALLPAPER/DAMAGED WALLPAPERS02.FBX
+  uploadId: 224508
