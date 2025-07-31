@@ -42,6 +42,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4201909622833131857}
   - component: {fileID: 4194131385272929220}
+  - component: {fileID: 7986175513428312129}
+  - component: {fileID: 9097106948003316163}
   m_Layer: 0
   m_Name: FPSCamera
   m_TagString: Untagged
@@ -84,7 +86,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 5956913220062238934}
+    TrackingTarget: {fileID: 5500940220189890239}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -107,6 +109,37 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!114 &7986175513428312129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501718706211966024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackerSettings:
+    BindingMode: 0
+    PositionDamping: {x: 1, y: 1, z: 1}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1, y: 1, z: 1}
+    QuaternionDamping: 1
+  FollowOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &9097106948003316163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501718706211966024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10269f4f29e74cf9a0c7dee3be0862aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7255403915101518731
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 4194131385272929220}
   m_rigidbody: {fileID: 5876654690008612119}
-  m_speed: 5
+  m_speed: 3
   m_lookXSensitivity: 2
   m_lookYSensitivity: 2
+  m_clampMinX: -80
+  m_clampMaxX: 80

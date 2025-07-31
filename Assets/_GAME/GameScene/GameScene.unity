@@ -2598,6 +2598,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1609333427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5956913220062238934, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+  m_PrefabInstance: {fileID: 5791876249185765914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!115 &1642155417
 MonoScript:
   m_ObjectHideFlags: 0
@@ -3807,10 +3812,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3715402943798934050, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
-      propertyPath: m_speed
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5956913220062238934, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3855,6 +3856,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7986175513428312129, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986175513428312129, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986175513428312129, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986175513428312129, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986175513428312129, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986175513428312129, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: TrackerSettings.RotationDamping.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097106948003316163, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
+      propertyPath: m_body
+      value: 
+      objectReference: {fileID: 1609333427}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

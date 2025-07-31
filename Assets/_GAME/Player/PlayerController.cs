@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private CinemachineCamera m_camera;
     [SerializeField] private Rigidbody m_rigidbody;
     
     [SerializeField] private float m_speed = 5f;
@@ -15,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_clampMaxX = 80f;
     
     private float m_mouseX;
-    private float m_mouseY;
     private Vector3 m_moveDirection;
 
     private void OnEnable()
@@ -26,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(m_camera == null || m_rigidbody == null)
+        if(m_rigidbody == null)
         {
             Debug.LogError("Camera or Rigidbody is not assigned.");
             return;
@@ -36,28 +34,20 @@ public class PlayerController : MonoBehaviour
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         
         // Calculate movement direction based on camera orientation
-        Vector3 cameraForward = m_camera.transform.forward;
+        Vector3 cameraForward = transform.forward;
         cameraForward.y = 0; // Ignore vertical component
-        Vector3 cameraRight = m_camera.transform.right;
+        Vector3 cameraRight = transform.right;
         cameraRight.y = 0; // Ignore vertical component
         m_moveDirection = (cameraForward * input.y + cameraRight * input.x).normalized;
         
         // Look around w/ mouse
         m_mouseX = Input.GetAxis("Mouse X") * m_lookXSensitivity;
-        m_mouseY = Input.GetAxis("Mouse Y") * m_lookYSensitivity;
         
-        if (m_mouseX != 0 || m_mouseY != 0)
+        if (m_mouseX != 0)
         {
             // Rotate the player based on mouse input
             Vector3 rotation = new Vector3(0, m_mouseX, 0);
             transform.Rotate(rotation);
-
-            // Optionally, you can also rotate the camera
-            // limit vertical rotation to prevent flipping
-            Vector3 cameraRotation = m_camera.transform.eulerAngles;
-            cameraRotation.x -= m_mouseY;
-            cameraRotation.x = Mathf.Clamp(cameraRotation.x, m_clampMinX, m_clampMaxX);
-            m_camera.transform.eulerAngles = cameraRotation;
         }
     }
 
