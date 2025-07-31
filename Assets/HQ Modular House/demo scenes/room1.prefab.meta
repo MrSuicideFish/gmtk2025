@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7eae301513b224249a915fcd45761264
+timeCreated: 1513061219
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 107018
+  packageName: HQ Modular House Interior Pack
+  packageVersion: 1.0
+  assetPath: Assets/HQ Modular House/demo scenes/room1.prefab
+  uploadId: 224508
