@@ -86,10 +86,14 @@ namespace _GAME.Gameplay
                 
                 if (room.EntranceDoor != null)
                 {
-                    room.EntranceDoor.Show();    
+                    room.EntranceDoor.Show();
                 }
-                
-                Destroy(prevRoom.gameObject);
+
+                if (prevRoom != null 
+                    && prevRoom.gameObject != null)
+                {
+                    Destroy(prevRoom.gameObject);    
+                }
             }
             
             room.NextRoom.OnRoomEntryComplete += OnRoomEntryComplete;
