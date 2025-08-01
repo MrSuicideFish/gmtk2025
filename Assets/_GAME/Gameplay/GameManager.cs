@@ -9,50 +9,54 @@ namespace _GAME.Gameplay
         [SerializeField] private List<Room> m_roomPrefabs;
         [SerializeField] private int m_currentRoom;
 
-        private Dictionary<int, Room> m_roomInstances;
         private Player m_playerInst;
+
+        private Room m_currentRoomInst;
+        private Room m_nextRoomInst, m_prevRoomInst;
 
         public void Start()
         {
             m_currentRoom = 0;
-            m_roomInstances = new Dictionary<int, Room>();
             
-            for(int i = 0; i < m_roomPrefabs.Count; i++)
-            {
-                LoadRoom(i);
-            }
+            // load first room
+            Vector3 FirstSpawnPos = new Vector3(-4.0f, 0f, 0f);
+            m_currentRoomInst = LoadRoom(0, FirstSpawnPos);
+            m_nextRoomInst = LoadRoom(0, m_currentRoomInst.RoomConnector.position);
+            m_nextRoomInst.EntranceDoor.Hide();
 
             m_playerInst = Instantiate(m_playerPrefab,
                 new Vector3(-4.0f, 0.5f, 0.5f),
                 Quaternion.Euler(0, 0, 0));
         }
-        
-        void LoadRoom(int roomIndex)
+
+        private void ProgressPuzzle(int puzzle)
         {
-            Room roomToLoad = m_roomPrefabs[roomIndex];
-            
-            Vector3 spawnPos = new Vector3();
-            if (roomIndex == 0)
+            if (m_currentRoomInst == null || m_currentRoomInst.IsPuzzleComplete)
             {
-                spawnPos = new Vector3(-4.0f, 0f, 0f);
+                return;
             }
-            else
+
+            // Check if the puzzle is complete
+            if (puzzle == m_currentRoom && !m_currentRoomInst.IsPuzzleComplete)
             {
-                spawnPos = m_roomInstances[roomIndex - 1].RoomConnector.position;
+                m_currentRoomInst.IsPuzzleComplete = true;
+                Debug.Log($"Puzzle {puzzle} completed in room {m_currentRoom}.");
+                
+                // Load next room if available
+                if (m_nextRoomInst != null)
+                {
+                    m_prevRoomInst = m_currentRoomInst;
+                    m_currentRoomInst = m_nextRoomInst;
+                    m_nextRoomInst = LoadRoom(m_currentRoom + 1, m_currentRoomInst.RoomConnector.position);
+                    m_currentRoom++;
+                }
             }
-            
-            var inst = Instantiate<Room>(roomToLoad, spawnPos, Quaternion.identity);
-            m_roomInstances.Add(roomIndex, inst);
         }
         
-        void UnloadRoom(int roomIndex)
+        Room LoadRoom(int roomIndex, Vector3 spawnPos)
         {
-            Room roomToUnload = m_roomInstances[roomIndex];
-            if (roomToUnload != null)
-            {
-                Destroy(roomToUnload.gameObject);
-                m_roomInstances.Remove(roomIndex);
-            }
+            Room roomToLoad = m_roomPrefabs[roomIndex];
+            return Instantiate<Room>(roomToLoad, spawnPos, Quaternion.identity);
         }
     }
 }

@@ -70,6 +70,16 @@ namespace _GAME
             OnInteractDisabled?.Invoke();
         }
 
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
+
         public void Release()
         {
             OnDestroyInvoked?.Invoke();

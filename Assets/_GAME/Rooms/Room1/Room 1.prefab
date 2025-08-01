@@ -460,6 +460,115 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a19b3aaadc1a3ee4dbb18bb87471102b, type: 3}
+--- !u!1 &1648109085645403972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207911458809988529}
+  - component: {fileID: 170607505708654407}
+  - component: {fileID: 6333875411116222112}
+  - component: {fileID: 4175315953219616354}
+  m_Layer: 0
+  m_Name: ExitDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1207911458809988529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648109085645403972}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.094, y: 1.188, z: 0.005}
+  m_LocalScale: {x: 1.0989782, y: 1.0010922, z: 0.99129534}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8527701773119289270}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!33 &170607505708654407
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648109085645403972}
+  m_Mesh: {fileID: 4300002, guid: a19b3aaadc1a3ee4dbb18bb87471102b, type: 3}
+--- !u!23 &6333875411116222112
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648109085645403972}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 980d1fd306b19a94db38fcd0c09028c7, type: 2}
+  - {fileID: 2100000, guid: ba8825cf8a8fc9b4aa24060348c2155d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4175315953219616354
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648109085645403972}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27617854, y: 1.1899769, z: 2.3636122}
+  m_Center: {x: 0.040127218, y: 0.5857711, z: 0.000000059604645}
 --- !u!1 &1668726603202268120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +2101,7 @@ MonoBehaviour:
   m_onAllNotified:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 939375353911859075}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _GAME.Interactable, Assembly-CSharp
         m_MethodName: ToggleInteractable
         m_Mode: 6
@@ -2005,7 +2114,8 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   m_notifEvents:
-  - EntityName: PuzzlePiece_1
+  - Any: 0
+    EntityName: PuzzlePiece_1
     OnNotify:
       m_PersistentCalls:
         m_Calls:
@@ -2021,7 +2131,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - EntityName: PuzzlePiece_2
+  - Any: 0
+    EntityName: PuzzlePiece_2
     OnNotify:
       m_PersistentCalls:
         m_Calls:
@@ -2037,7 +2148,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - EntityName: PuzzlePiece_3
+  - Any: 0
+    EntityName: PuzzlePiece_3
     OnNotify:
       m_PersistentCalls:
         m_Calls:
@@ -2053,7 +2165,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - EntityName: PuzzlePiece_4
+  - Any: 0
+    EntityName: PuzzlePiece_4
     OnNotify:
       m_PersistentCalls:
         m_Calls:
@@ -2239,8 +2352,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8678250147300427047}
-  - component: {fileID: 939375353911859075}
   - component: {fileID: 650963749200923802}
+  - component: {fileID: 5414692025714789965}
   - component: {fileID: 2989223072130011904}
   m_Layer: 6
   m_Name: ExitDoor
@@ -2265,46 +2378,6 @@ Transform:
   - {fileID: 7345616110739338545}
   m_Father: {fileID: 683852963166012602}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &939375353911859075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4025355135948871485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a777e6efee624732b42f99da297f265e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsInteractable: 0
-  DisplayName: Door
-  Instruction: '[Left Click] To Open'
-  DisabledInstruction: Locked
-  OnBeginInteract:
-    m_PersistentCalls:
-      m_Calls: []
-  OnEndInteract:
-    m_PersistentCalls:
-      m_Calls: []
-  OnInteractEnabled:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2989223072130011904}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Open
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnInteractDisabled:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &650963749200923802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2326,6 +2399,70 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.27617854, y: 1.1899769, z: 2.3636122}
   m_Center: {x: 0.040127218, y: 0.5857711, z: 0.000000059604645}
+--- !u!114 &5414692025714789965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4025355135948871485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933a164d4fa9f5e44ac1547c874c15a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInteractable: 1
+  DisplayName: Door
+  Instruction: 
+  DisabledInstruction: 
+  OnBeginInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractDisabled:
+    m_PersistentCalls:
+      m_Calls: []
+  IsToggled: 0
+  CanBeToggledOff: 1
+  ToggleDelay: 0.2
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls: []
+  ToggledOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2989223072130011904}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
+  ToggledOff:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2989223072130011904}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &2989223072130011904
 Animator:
   serializedVersion: 7
@@ -2912,6 +3049,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomConnector: {fileID: 493655101789029386}
+  EntranceDoor: {fileID: 0}
+  ExitDoor: {fileID: 0}
+  IsPuzzleComplete: 0
 --- !u!1 &5492814932227537405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,8 +4140,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 222500132254645835}
   - {fileID: 8678250147300427047}
+  - {fileID: 6735043083585277162}
+  - {fileID: 8527701773119289270}
   - {fileID: 142942111950383307}
   - {fileID: 5551834025446145446}
   - {fileID: 1659379190817346687}
@@ -4513,6 +4654,148 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1271899, y: 1.1271898, z: 0.06869657}
   m_Center: {x: 0, y: 0, z: -0.04519756}
+--- !u!1 &7822871933681070630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8527701773119289270}
+  - component: {fileID: 2203982043671382622}
+  - component: {fileID: 2289911263725443257}
+  - component: {fileID: 2954399783575931234}
+  m_Layer: 6
+  m_Name: EntranceDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8527701773119289270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822871933681070630}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.5000015, y: -0.49999854, z: -0.49999854, w: 0.5000015}
+  m_LocalPosition: {x: -0.65, y: 1.3450979, z: -4.097}
+  m_LocalScale: {x: 1.0989782, y: 1.0989782, z: 1.098978}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1207911458809988529}
+  m_Father: {fileID: 683852963166012602}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+--- !u!65 &2203982043671382622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822871933681070630}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27617854, y: 1.1899769, z: 2.3636122}
+  m_Center: {x: 0.040127218, y: 0.5857711, z: 0.000000059604645}
+--- !u!114 &2289911263725443257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822871933681070630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933a164d4fa9f5e44ac1547c874c15a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsInteractable: 1
+  DisplayName: Door
+  Instruction: 
+  DisabledInstruction: 
+  OnBeginInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractEnabled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractDisabled:
+    m_PersistentCalls:
+      m_Calls: []
+  IsToggled: 0
+  CanBeToggledOff: 1
+  ToggleDelay: 0.2
+  OnToggled:
+    m_PersistentCalls:
+      m_Calls: []
+  ToggledOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2989223072130011904}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
+  ToggledOff:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2989223072130011904}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &2954399783575931234
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7822871933681070630}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2b3d4a209bfb664481c51a91f4a01b1, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8058691618551654459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4947,7 +5230,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.8024235, y: 0.2181788, z: 8.940849}
   m_Center: {x: 2.1178792e-10, y: -0.0017777985, z: 0.0000011923053}
---- !u!1 &8710363460382971548
+--- !u!1 &8865475997928749600
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4955,93 +5238,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 222500132254645835}
-  - component: {fileID: 8285014919310474841}
-  - component: {fileID: 7511093868563205881}
-  - component: {fileID: 3134447266608003594}
+  - component: {fileID: 6735043083585277162}
+  - component: {fileID: 3505566747897881946}
+  - component: {fileID: 2994509512676406499}
   m_Layer: 6
-  m_Name: EntranceDoor
+  m_Name: PlayerZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &222500132254645835
+--- !u!4 &6735043083585277162
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710363460382971548}
+  m_GameObject: {fileID: 8865475997928749600}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.65677345, y: 1.3450979, z: -3.9925532}
-  m_LocalScale: {x: 1.0989782, y: 1.0989782, z: 1.098978}
+  m_LocalRotation: {x: -0.5000015, y: -0.49999854, z: -0.49999854, w: 0.5000015}
+  m_LocalPosition: {x: 0.014887691, y: 1.3450979, z: -3.0903401}
+  m_LocalScale: {x: 1.4351163, y: 2.8562062, z: 2.7583208}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 683852963166012602}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
---- !u!33 &8285014919310474841
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710363460382971548}
-  m_Mesh: {fileID: 4300002, guid: a19b3aaadc1a3ee4dbb18bb87471102b, type: 3}
---- !u!23 &7511093868563205881
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710363460382971548}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 980d1fd306b19a94db38fcd0c09028c7, type: 2}
-  - {fileID: 2100000, guid: ba8825cf8a8fc9b4aa24060348c2155d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3134447266608003594
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3505566747897881946
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8710363460382971548}
+  m_GameObject: {fileID: 8865475997928749600}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5050,12 +5278,39 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.27617854, y: 1.1899769, z: 2.3636122}
-  m_Center: {x: 0.040127218, y: 0.5857711, z: 0.000000059604645}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2994509512676406499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865475997928749600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ba9f8d05d770c4097ba2b72cbc91f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlayerLeftZone:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2289911263725443257}
+        m_TargetAssemblyTypeName: _GAME.Interactable, Assembly-CSharp
+        m_MethodName: ToggleInteractable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8885061180884706610
 GameObject:
   m_ObjectHideFlags: 0
