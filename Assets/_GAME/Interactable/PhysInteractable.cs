@@ -1,9 +1,24 @@
 using _GAME;
+using UnityEngine;
 
 public class PhysInteractable : Interactable
 {
-    public override void BeginInteract()
+    private Vector3 force;
+    
+    public override void BeginInteract(Player player)
     {
-        base.BeginInteract();
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.useGravity = true;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+    }
+
+    public override void EndInteract()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        
+        rb.interpolation = RigidbodyInterpolation.Extrapolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 }

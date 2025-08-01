@@ -51,7 +51,8 @@ namespace _GAME
         private void OnBeginHover(Interactable interactable)
         {
             DisplayName = interactable.DisplayName;
-            InstructionText = interactable.Instruction;
+            InstructionText = interactable.IsInteractable 
+                ? interactable.Instruction : interactable.DisabledInstruction;
         }
     }
 }
