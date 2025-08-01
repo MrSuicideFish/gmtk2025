@@ -151,12 +151,12 @@ MonoBehaviour:
   m_playerPrefab: {fileID: 4786439766013862, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
   m_roomPrefabs:
   - {fileID: 714549254433668975, guid: 59bd7140b91c6d2479e4901e229592cd, type: 3}
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
-  - {fileID: 714549254433668975, guid: f0709c4ecb6aa51408cc1e105a7a412d, type: 3}
+  - {fileID: 714549254433668975, guid: af0097dbbaf8fc04e92e280068ec9d6c, type: 3}
+  - {fileID: 714549254433668975, guid: 3b5f3efe730ddfc4a845a881fbe626ef, type: 3}
+  - {fileID: 714549254433668975, guid: 532a652ef0dfe9347be2d6e228c78e31, type: 3}
+  - {fileID: 714549254433668975, guid: 9d99df63b03ee60418ec48624b15bfe5, type: 3}
+  - {fileID: 714549254433668975, guid: 4887f8bedb5eb844fb3654072d7ec00c, type: 3}
+  - {fileID: 714549254433668975, guid: 1c6833d5a302b694bb59ba85163b1d7a, type: 3}
   m_currentRoom: 1
 --- !u!4 &639445181
 Transform:
@@ -1702,7 +1702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4806998597083795835, guid: bc5f7b2abcc0cec42a226f2f89172000, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.77
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4806998597083795835, guid: bc5f7b2abcc0cec42a226f2f89172000, type: 3}
       propertyPath: m_LocalRotation.w
