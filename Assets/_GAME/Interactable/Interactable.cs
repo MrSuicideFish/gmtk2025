@@ -42,12 +42,6 @@ namespace _GAME
             OnEndInteract?.Invoke();
         }
 
-        public void Destroy()
-        {
-            OnDestroyInvoked?.Invoke();
-            GameObject.Destroy(gameObject, 0.1f);
-        }
-
         public void ToggleInteractable(bool enable)
         {
             if (IsInteractable == enabled)
@@ -74,6 +68,17 @@ namespace _GAME
         {
             IsInteractable = false;
             OnInteractDisabled?.Invoke();
+        }
+
+        public void Release()
+        {
+            OnDestroyInvoked?.Invoke();
+        }
+        
+        public void ReleaseAndDestroy()
+        {
+            OnDestroyInvoked?.Invoke();
+            GameObject.Destroy(gameObject);
         }
     }
 }

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +7,7 @@ public class NotifyEntityContact : MonoBehaviour
     [Serializable]
     public class NotifEvent
     {
+        public bool Any;
         public string EntityName;
         public UnityEvent OnNotify;
     }
@@ -25,7 +25,8 @@ public class NotifyEntityContact : MonoBehaviour
             bool found = false;
             foreach (var notifEvent in m_notifEvents)
             {
-                if (notifEvent.EntityName == physInteractable.gameObject.name)
+                if (notifEvent.Any 
+                    || notifEvent.EntityName == physInteractable.gameObject.name)
                 {
                     found = true;
                     m_notifCount++;
@@ -43,7 +44,7 @@ public class NotifyEntityContact : MonoBehaviour
 
                 if (m_destoryEncroacher)
                 {
-                    physInteractable.Destroy();    
+                    physInteractable.ReleaseAndDestroy();    
                 }
             }
         }

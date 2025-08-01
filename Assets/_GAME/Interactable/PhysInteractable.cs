@@ -12,6 +12,9 @@ public class PhysInteractable : Interactable
         rb.useGravity = true;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        rb.constraints = RigidbodyConstraints.None;
+
+        transform.SetParent(null, true);
     }
 
     public override void EndInteract()
