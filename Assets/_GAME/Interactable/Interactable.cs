@@ -47,11 +47,6 @@ namespace _GAME
 
         public void ToggleInteractable(bool enable)
         {
-            if (IsInteractable == enabled)
-            {
-                return;
-            }
-            
             IsInteractable = enable;
             if (enable)
             {

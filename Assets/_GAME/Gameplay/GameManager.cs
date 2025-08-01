@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.LightTransport.PostProcessing;
 
 namespace _GAME.Gameplay
 {
@@ -21,6 +23,8 @@ namespace _GAME.Gameplay
 
             m_currentRoom = 0;
             Room firstRoom = LoadRoom(m_currentRoom, FirstSpawnPos, false);
+            firstRoom.PrevRoom = null;
+            firstRoom.PlayerEnterRoomZone.gameObject.SetActive(false);
             firstRoom.OnRoomPuzzleComplete += OnRoomPuzzleComplete;
             OnRoomEntryComplete(firstRoom); // immediately enter first room
 
@@ -45,22 +49,52 @@ namespace _GAME.Gameplay
                 return;
             }
             
+            nextPuzzle.PrevRoom = room;
             nextPuzzle.OnRoomEntryComplete += OnRoomEntryComplete;
             nextPuzzle.OnRoomPuzzleComplete += OnRoomPuzzleComplete;
             room.NextRoom = nextPuzzle;
         }
 
-        private void OnRoomEntryComplete(Room room)
+        private async void OnRoomEntryComplete(Room room)
+        {
+            StartCoroutine(RoomEntryAsync(room));
+        }
+        
+        private IEnumerator RoomEntryAsync(Room room)
         {
             if (room.NextRoom != null)
             {
                 Destroy(room.NextRoom.gameObject);
             }
-
+            
             // load the same room for next (for now)
             room.NextRoom = LoadRoom(room.RoomIndex, room.RoomConnector.position, true);
+            room.NextRoom.PrevRoom = room;
+            
+            Room prevRoom = room.PrevRoom;
+            if (prevRoom != null && prevRoom.ExitDoor != null)
+            {
+                room.PrevRoom.ExitDoor.Toggle(false);
+                room.PrevRoom.ExitDoor.ToggleInteractable(false);
+
+                if (room.EntranceDoor != null)
+                {
+                    room.EntranceDoor.ToggleInteractable(false);    
+                }
+                
+                yield return new WaitForSeconds(3);
+                
+                if (room.EntranceDoor != null)
+                {
+                    room.EntranceDoor.Show();    
+                }
+                
+                Destroy(prevRoom.gameObject);
+            }
+            
             room.NextRoom.OnRoomEntryComplete += OnRoomEntryComplete;
             room.NextRoom.OnRoomPuzzleComplete += OnRoomPuzzleComplete;
+            
         }
 
         Room LoadRoom(int roomIndex, Vector3 spawnPos, bool hideEntrance)
@@ -74,7 +108,7 @@ namespace _GAME.Gameplay
             room = Instantiate<Room>(room, spawnPos, Quaternion.identity);
             room.RoomIndex = roomIndex;
 
-            if (hideEntrance)
+            if (hideEntrance && room.EntranceDoor != null) 
             {
                 room.EntranceDoor.Hide();    
             }

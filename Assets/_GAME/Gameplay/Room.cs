@@ -8,12 +8,13 @@ namespace _GAME.Gameplay
         public event RoomEventHandler OnRoomEntryComplete;
         public event RoomEventHandler OnRoomPuzzleComplete;
         
-        public int RoomIndex;
         public Transform RoomConnector;
         public ToggleInteractable EntranceDoor;
         public ToggleInteractable ExitDoor;
-        public bool IsPuzzleComplete = false;
+        public NotifyPlayerLeftZone PlayerEnterRoomZone;
 
+        [HideInInspector] public int RoomIndex;
+        [HideInInspector] public Room PrevRoom;
         [HideInInspector] public Room NextRoom;
         
 
