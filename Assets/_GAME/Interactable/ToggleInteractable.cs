@@ -14,8 +14,6 @@ public class ToggleInteractable : Interactable
     public UnityEvent ToggledOn;
     public UnityEvent ToggledOff;
     
-    
-
     private void OnEnable()
     {
         OnBeginInteract.AddListener(OnInteract);
@@ -46,6 +44,15 @@ public class ToggleInteractable : Interactable
         IsToggled = value;
         OnToggled?.Invoke(value);
         s_lastToggleTime = Time.time;
+
+        if (IsToggled)
+        {
+            ToggledOn?.Invoke();
+        }
+        else
+        {
+            ToggledOff?.Invoke();
+        }
     }
 
     public void Toggle()

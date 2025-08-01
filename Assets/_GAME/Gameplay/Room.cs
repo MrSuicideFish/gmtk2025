@@ -5,8 +5,8 @@ namespace _GAME.Gameplay
     public class Room : MonoBehaviour
     {
         public Transform RoomConnector;
-        public Interactable EntranceDoor;
-        public Interactable ExitDoor;
+        public ToggleInteractable EntranceDoor;
+        public ToggleInteractable ExitDoor;
         public bool IsPuzzleComplete = false;
     }
 }

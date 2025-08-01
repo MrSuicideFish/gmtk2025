@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 6333875411116222112}
   - component: {fileID: 4175315953219616354}
   m_Layer: 0
-  m_Name: ExitDoor
+  m_Name: EntraceDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3049,8 +3049,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomConnector: {fileID: 493655101789029386}
-  EntranceDoor: {fileID: 0}
-  ExitDoor: {fileID: 0}
+  EntranceDoor: {fileID: 2289911263725443257}
+  ExitDoor: {fileID: 5414692025714789965}
   IsPuzzleComplete: 0
 --- !u!1 &5492814932227537405
 GameObject:
@@ -4141,8 +4141,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8678250147300427047}
-  - {fileID: 6735043083585277162}
   - {fileID: 8527701773119289270}
+  - {fileID: 6735043083585277162}
   - {fileID: 142942111950383307}
   - {fileID: 5551834025446145446}
   - {fileID: 1659379190817346687}
@@ -4722,10 +4722,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933a164d4fa9f5e44ac1547c874c15a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsInteractable: 1
+  IsInteractable: 0
   DisplayName: Door
   Instruction: 
-  DisabledInstruction: 
+  DisabledInstruction: Locked
   OnBeginInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -5242,7 +5242,7 @@ GameObject:
   - component: {fileID: 3505566747897881946}
   - component: {fileID: 2994509512676406499}
   m_Layer: 6
-  m_Name: PlayerZone
+  m_Name: CloseDoorZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5257,7 +5257,7 @@ Transform:
   m_GameObject: {fileID: 8865475997928749600}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5000015, y: -0.49999854, z: -0.49999854, w: 0.5000015}
-  m_LocalPosition: {x: 0.014887691, y: 1.3450979, z: -3.0903401}
+  m_LocalPosition: {x: 0.014887691, y: 1.3450979, z: 5.05}
   m_LocalScale: {x: 1.4351163, y: 2.8562062, z: 2.7583208}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5299,16 +5299,16 @@ MonoBehaviour:
   OnPlayerLeftZone:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2289911263725443257}
-        m_TargetAssemblyTypeName: _GAME.Interactable, Assembly-CSharp
-        m_MethodName: ToggleInteractable
-        m_Mode: 6
+      - m_Target: {fileID: 2989223072130011904}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Close
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8885061180884706610
