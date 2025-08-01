@@ -48,10 +48,26 @@ namespace _GAME
             GameObject.Destroy(gameObject, 0.1f);
         }
 
+        public void ToggleInteractable(bool enable)
+        {
+            if (IsInteractable == enabled)
+            {
+                return;
+            }
+            
+            IsInteractable = enable;
+            if (enable)
+            {
+                OnInteractEnabled?.Invoke();    
+            }
+            else
+            {
+                OnInteractDisabled?.Invoke();
+            }
+        }
         public void EnableInteractable()
         {
-            IsInteractable = true;
-            OnInteractEnabled?.Invoke();
+
         }
         
         public void DisableInteractable()
