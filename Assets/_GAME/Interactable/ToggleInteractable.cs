@@ -35,11 +35,6 @@ public class ToggleInteractable : Interactable
         {
             return;
         }
-        
-        if (Time.time - s_lastToggleTime < ToggleDelay)
-        {
-            return;
-        }
 
         IsToggled = value;
         OnToggled?.Invoke(value);

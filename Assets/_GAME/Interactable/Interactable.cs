@@ -34,7 +34,10 @@ namespace _GAME
 
         public virtual void BeginInteract(Player player)
         {
-            OnBeginInteract?.Invoke();
+            if (IsInteractable)
+            {
+                OnBeginInteract?.Invoke();    
+            }
         }
 
         public virtual void EndInteract()

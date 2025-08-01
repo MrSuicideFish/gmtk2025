@@ -8,11 +8,9 @@ namespace _GAME.Gameplay
         [SerializeField] private Player m_playerPrefab;
         [SerializeField] private List<Room> m_roomPrefabs;
         [SerializeField] private int m_currentRoom;
+        [SerializeField] private Canvas m_gameOverCanvas;
 
         private Player m_playerInst;
-
-        private Room m_currentRoomInst;
-        private Room m_nextRoomInst, m_prevRoomInst;
 
         public void Start()
         {
@@ -20,43 +18,68 @@ namespace _GAME.Gameplay
             
             // load first room
             Vector3 FirstSpawnPos = new Vector3(-4.0f, 0f, 0f);
-            m_currentRoomInst = LoadRoom(0, FirstSpawnPos);
-            m_nextRoomInst = LoadRoom(0, m_currentRoomInst.RoomConnector.position);
-            m_nextRoomInst.EntranceDoor.Hide();
 
+            m_currentRoom = 0;
+            Room firstRoom = LoadRoom(m_currentRoom, FirstSpawnPos, false);
+            firstRoom.OnRoomPuzzleComplete += OnRoomPuzzleComplete;
+            OnRoomEntryComplete(firstRoom); // immediately enter first room
+
+            // Spawn player
             m_playerInst = Instantiate(m_playerPrefab,
                 new Vector3(-4.0f, 0.5f, 0.5f),
                 Quaternion.Euler(0, 0, 0));
         }
 
-        private void ProgressPuzzle(int puzzle)
+        public void OnRoomPuzzleComplete(Room room)
         {
-            if (m_currentRoomInst == null || m_currentRoomInst.IsPuzzleComplete)
+            // remove old next room (the duplicate of itself)
+            if (room.NextRoom != null)
             {
-                return;
+                Destroy(room.NextRoom.gameObject);
             }
 
-            // Check if the puzzle is complete
-            if (puzzle == m_currentRoom && !m_currentRoomInst.IsPuzzleComplete)
+            Room nextPuzzle = LoadRoom(room.RoomIndex + 1, room.RoomConnector.position, true);
+            if(nextPuzzle == null)
             {
-                m_currentRoomInst.IsPuzzleComplete = true;
-                Debug.Log($"Puzzle {puzzle} completed in room {m_currentRoom}.");
-                
-                // Load next room if available
-                if (m_nextRoomInst != null)
-                {
-                    m_prevRoomInst = m_currentRoomInst;
-                    m_currentRoomInst = m_nextRoomInst;
-                    m_nextRoomInst = LoadRoom(m_currentRoom + 1, m_currentRoomInst.RoomConnector.position);
-                    m_currentRoom++;
-                }
+                m_gameOverCanvas.gameObject.SetActive(true);
+                return;
             }
+            
+            nextPuzzle.OnRoomEntryComplete += OnRoomEntryComplete;
+            nextPuzzle.OnRoomPuzzleComplete += OnRoomPuzzleComplete;
+            room.NextRoom = nextPuzzle;
         }
-        
-        Room LoadRoom(int roomIndex, Vector3 spawnPos)
+
+        private void OnRoomEntryComplete(Room room)
         {
-            Room roomToLoad = m_roomPrefabs[roomIndex];
-            return Instantiate<Room>(roomToLoad, spawnPos, Quaternion.identity);
+            if (room.NextRoom != null)
+            {
+                Destroy(room.NextRoom.gameObject);
+            }
+
+            // load the same room for next (for now)
+            room.NextRoom = LoadRoom(room.RoomIndex, room.RoomConnector.position, true);
+            room.NextRoom.OnRoomEntryComplete += OnRoomEntryComplete;
+            room.NextRoom.OnRoomPuzzleComplete += OnRoomPuzzleComplete;
+        }
+
+        Room LoadRoom(int roomIndex, Vector3 spawnPos, bool hideEntrance)
+        {
+            if( roomIndex < 0 || m_roomPrefabs.Count <= roomIndex)
+            {
+                return null;
+            }
+            
+            Room room = m_roomPrefabs[roomIndex];
+            room = Instantiate<Room>(room, spawnPos, Quaternion.identity);
+            room.RoomIndex = roomIndex;
+
+            if (hideEntrance)
+            {
+                room.EntranceDoor.Hide();    
+            }
+            
+            return room;
         }
     }
 }
