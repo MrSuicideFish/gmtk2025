@@ -34,7 +34,10 @@ namespace _GAME
 
         public virtual void BeginInteract(Player player)
         {
-            OnBeginInteract?.Invoke();
+            if (IsInteractable)
+            {
+                OnBeginInteract?.Invoke();    
+            }
         }
 
         public virtual void EndInteract()
@@ -42,19 +45,8 @@ namespace _GAME
             OnEndInteract?.Invoke();
         }
 
-        public void Destroy()
-        {
-            OnDestroyInvoked?.Invoke();
-            GameObject.Destroy(gameObject, 0.1f);
-        }
-
         public void ToggleInteractable(bool enable)
         {
-            if (IsInteractable == enabled)
-            {
-                return;
-            }
-            
             IsInteractable = enable;
             if (enable)
             {
@@ -74,6 +66,27 @@ namespace _GAME
         {
             IsInteractable = false;
             OnInteractDisabled?.Invoke();
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Release()
+        {
+            OnDestroyInvoked?.Invoke();
+        }
+        
+        public void ReleaseAndDestroy()
+        {
+            OnDestroyInvoked?.Invoke();
+            GameObject.Destroy(gameObject);
         }
     }
 }
