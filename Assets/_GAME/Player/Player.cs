@@ -15,6 +15,7 @@ namespace _GAME
         [SerializeField] private LayerMask m_interactMask;
         [SerializeField] private float m_interactDistance = 1.0f;
         [SerializeField] private Rigidbody m_physInteractBody;
+
         
         private Ray m_interactRay;
         

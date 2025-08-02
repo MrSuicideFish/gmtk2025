@@ -1,10 +1,12 @@
 using System;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private CharacterController m_characterController;
+    [SerializeField] private Animator m_animator;
     
     [SerializeField] private float m_speed = 5f;
     
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private float m_clampMinX = -80f;
     [SerializeField] private float m_clampMaxX = 80f;
+    [SerializeField] private MMFeedbacks m_footstepFeedback;
     
     private float m_mouseX;
     private Vector3 m_moveDirection;
@@ -40,6 +43,18 @@ public class PlayerController : MonoBehaviour
         Vector3 cameraRight = transform.right;
         cameraRight.y = 0; // Ignore vertical component
         m_moveDirection = (cameraForward * input.y + cameraRight * input.x).normalized;
+
+        float animTime = m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        if (m_moveDirection != Vector3.zero)
+        {
+            animTime = Mathf.Clamp(animTime + Time.deltaTime, 0f, 1f);
+            if (animTime > 0.99f)
+            {
+                animTime = 0f; // Reset animation time if it exceeds 1
+            }
+        }
+        
+        m_animator.Play("PlayerWalk", 0, animTime);
         
         // Look around w/ mouse
         m_mouseX = Input.GetAxis("Mouse X") * m_lookXSensitivity;
@@ -56,5 +71,10 @@ public class PlayerController : MonoBehaviour
     {
         var collisionFlags = m_characterController.Move(
             new Vector3(m_moveDirection.x, Physics.gravity.y, m_moveDirection.z) * m_speed * Time.deltaTime);
+    }
+    
+    private void Footstep()
+    {
+        m_footstepFeedback.PlayFeedbacks();
     }
 }
