@@ -24,10 +24,6 @@ namespace _GAME
         
         private void Start()
         {
-            Vector3 localPos = m_physInteractBody.transform.localPosition;
-            m_physInteractBody.transform.SetParent(Camera.main.transform, true);
-            m_physInteractBody.transform.localPosition = localPos;
-            
             Instantiate(m_fpsHud);
         }
 
@@ -121,6 +117,8 @@ namespace _GAME
                 joint.autoConfigureConnectedAnchor = false;
                 joint.breakForce = float.MaxValue;
                 joint.breakTorque = float.MaxValue;
+
+                m_currentInteractable.transform.position = m_physInteractBody.transform.position;
             }
             
             m_currentInteractable.OnDestroyInvoked += EndInteract;
@@ -152,6 +150,14 @@ namespace _GAME
         private void Update()
         {
             m_interactRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            m_physInteractBody.transform.forward = Camera.main.transform.forward;
+            m_physInteractBody.transform.position = m_interactRay.GetPoint(1);
+            if (Physics.SphereCast(m_interactRay, 0.1f, out RaycastHit worldHit, 1.0f, 1 << m_interactMask))
+            {
+                m_physInteractBody.transform.position = m_interactRay.GetPoint(worldHit.distance);
+            }
+            
             bool hovering = Physics.Raycast(m_interactRay, out RaycastHit hit, m_interactDistance, m_interactMask);
             if(hovering)
             {
