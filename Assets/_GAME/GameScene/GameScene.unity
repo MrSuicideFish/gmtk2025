@@ -150,10 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_playerPrefab: {fileID: 4786439766013862, guid: d41d98bdcd6e95d479e855c6b14414fa, type: 3}
   m_roomPrefabs:
-  - {fileID: 714549254433668975, guid: 59bd7140b91c6d2479e4901e229592cd, type: 3}
   - {fileID: 714549254433668975, guid: af0097dbbaf8fc04e92e280068ec9d6c, type: 3}
-  - {fileID: 714549254433668975, guid: 3b5f3efe730ddfc4a845a881fbe626ef, type: 3}
-  - {fileID: 714549254433668975, guid: f353faffa0a59604485442c36453205d, type: 3}
+  - {fileID: 714549254433668975, guid: 537df9d635e44d84a99d4ec1bdd9d136, type: 3}
+  - {fileID: 714549254433668975, guid: e83c1aca92204dd47a4f9ae8ad242829, type: 3}
+  - {fileID: 714549254433668975, guid: 59bd7140b91c6d2479e4901e229592cd, type: 3}
   - {fileID: 714549254433668975, guid: 9d99df63b03ee60418ec48624b15bfe5, type: 3}
   - {fileID: 714549254433668975, guid: 4887f8bedb5eb844fb3654072d7ec00c, type: 3}
   - {fileID: 714549254433668975, guid: 1c6833d5a302b694bb59ba85163b1d7a, type: 3}

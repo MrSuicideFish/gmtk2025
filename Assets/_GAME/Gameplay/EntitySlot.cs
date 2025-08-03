@@ -15,7 +15,7 @@ public class EntitySlot : MonoBehaviour
     public UnityEvent OnEntityAddedEvent;
     public UnityEvent OnEntityRemovedEvent;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (m_isOccupied) return;
         PhysInteractable physInteractable = other.GetComponent<PhysInteractable>();

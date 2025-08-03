@@ -16,7 +16,6 @@ namespace _GAME.Gameplay
         [HideInInspector] public int RoomIndex;
         [HideInInspector] public Room PrevRoom;
         [HideInInspector] public Room NextRoom;
-        
 
         public void NotifyRoomEntry()
         {
