@@ -1,3 +1,4 @@
+using _GAME;
 using MoreMountains.Feedbacks;
 using UnityEngine;
 
@@ -16,13 +17,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_clampMaxX = 80f;
     [SerializeField] private MMFeedbacks m_footstepFeedback;
     
+    [SerializeField] private PlayerCameraRotationControl m_cameraRotationControl;
+    
     private float m_mouseX;
     private Vector3 m_moveDirection;
 
-    private void OnEnable()
+    private bool m_inputEnabled = true;
+
+    public bool InputEnabled
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        get => m_inputEnabled;
+        set
+        {
+            Cursor.visible = !value;
+            Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
+            
+            m_cameraRotationControl.enabled = value;
+            m_inputEnabled = value;
+        }
     }
 
     private void Update()
@@ -35,6 +47,10 @@ public class PlayerController : MonoBehaviour
 
         // Get input for movement
         Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (!m_inputEnabled)
+        {
+            input = Vector2.zero; // Disable movement input if InputEnabled is false
+        }
         
         // Calculate movement direction based on camera orientation
         Vector3 cameraForward = transform.forward;
@@ -61,7 +77,14 @@ public class PlayerController : MonoBehaviour
         m_animator.Play("PlayerWalk", 0, animTime);
         
         // Look around w/ mouse
-        m_mouseX = Input.GetAxis("Mouse X") * m_lookXSensitivity;
+        if(m_inputEnabled)
+        {
+            m_mouseX = Input.GetAxis("Mouse X") * m_lookXSensitivity;    
+        }
+        else
+        {
+            m_mouseX = 0;
+        }
         
         if (m_mouseX != 0)
         {

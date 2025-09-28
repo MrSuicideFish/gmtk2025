@@ -11,12 +11,11 @@ namespace _GAME
         public static event PlayerInteractEventHandler OnBeginInteract;
         public static event PlayerInteractEventHandler OnEndInteract;
         
-        [SerializeField] private GameObject m_fpsHud;
+
         [SerializeField] private LayerMask m_interactMask;
         [SerializeField] private float m_interactDistance = 1.0f;
         [SerializeField] private Rigidbody m_physInteractBody;
 
-        
         private Ray m_interactRay;
         
         private Interactable m_hoveredInteractable;
@@ -24,7 +23,7 @@ namespace _GAME
         
         private void Start()
         {
-            Instantiate(m_fpsHud);
+
         }
 
         private void BeginHoverInteractable(Interactable interactable)
@@ -74,6 +73,9 @@ namespace _GAME
 
             if (m_currentInteractable is PhysInteractable physObj)
             {
+                
+                Physics.IgnoreCollision(GetComponent<Collider>(), physObj.GetComponent<Collider>(), true);
+                
                 // connect joint
                 ConfigurableJoint joint = physObj.GetComponent<ConfigurableJoint>();
                 if (joint == null)
@@ -145,6 +147,7 @@ namespace _GAME
             m_currentInteractable.EndInteract();
             OnEndInteract?.Invoke(m_currentInteractable);
             m_currentInteractable = null;
+            EndHoverInteractable();
         }
 
         private void Update()

@@ -36,9 +36,16 @@ public class ToggleInteractable : Interactable
             return;
         }
 
+        var old = IsToggled;
         IsToggled = value;
-        OnToggled?.Invoke(value);
         s_lastToggleTime = Time.time;
+
+        if (IsToggled == old)
+        {
+            return;
+        }
+        
+        OnToggled?.Invoke(value);
 
         if (IsToggled)
         {

@@ -17,6 +17,8 @@ namespace _GAME
         public delegate void InteractableEventHandler();
         public event InteractableEventHandler OnDestroyInvoked;
 
+        public ToggleInteractable RequireToggle;
+
         public UnityEvent OnBeginInteract;
         public UnityEvent OnEndInteract;
 
@@ -36,6 +38,12 @@ namespace _GAME
         {
             if (IsInteractable)
             {
+                if(RequireToggle != null 
+                   && RequireToggle.IsToggled == false)
+                {
+                    return;
+                }
+                
                 OnBeginInteract?.Invoke();    
             }
         }
@@ -59,7 +67,8 @@ namespace _GAME
         }
         public void EnableInteractable()
         {
-
+            IsInteractable = true;
+            OnInteractEnabled?.Invoke();
         }
         
         public void DisableInteractable()

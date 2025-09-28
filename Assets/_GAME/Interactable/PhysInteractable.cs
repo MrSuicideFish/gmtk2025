@@ -14,6 +14,7 @@ public class PhysInteractable : Interactable
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         rb.constraints = RigidbodyConstraints.None;
 
+
         transform.SetParent(null, true);
     }
 

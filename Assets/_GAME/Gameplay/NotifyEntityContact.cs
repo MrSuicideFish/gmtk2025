@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,7 +16,8 @@ public class NotifyEntityContact : MonoBehaviour
     [SerializeField] private bool m_destoryEncroacher = true;
     [SerializeField] private UnityEvent m_onAllNotified;
     [SerializeField] private NotifEvent[] m_notifEvents;
-    private byte m_notifCount = 0;
+    
+    private List<string> m_notifiedEntities = new List<string>();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,10 +28,9 @@ public class NotifyEntityContact : MonoBehaviour
             foreach (var notifEvent in m_notifEvents)
             {
                 if (notifEvent.Any 
-                    || notifEvent.EntityName == physInteractable.gameObject.name)
+                    || notifEvent.EntityName.Equals(physInteractable.gameObject.name))
                 {
                     found = true;
-                    m_notifCount++;
                     notifEvent.OnNotify?.Invoke();
                     break;
                 }
@@ -37,7 +38,8 @@ public class NotifyEntityContact : MonoBehaviour
 
             if (found)
             {
-                if (m_notifCount == m_notifEvents.Length)
+                m_notifiedEntities.Add(physInteractable.gameObject.name);
+                if (m_notifiedEntities.Count == m_notifEvents.Length)
                 {
                     m_onAllNotified?.Invoke();
                 }

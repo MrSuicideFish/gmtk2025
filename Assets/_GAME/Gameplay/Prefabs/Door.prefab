@@ -338,8 +338,8 @@ MonoBehaviour:
         SequentialOrderHoldCooldownDuration: 2
         RandomUnique: 0
         SoundDataSO: {fileID: 0}
-        MinVolume: 1
-        MaxVolume: 1
+        MinVolume: 0.228
+        MaxVolume: 0.521
         MinPitch: 1
         MaxPitch: 1
         MmSoundManagerTrack: 0
@@ -853,8 +853,8 @@ MonoBehaviour:
         SequentialOrderHoldCooldownDuration: 2
         RandomUnique: 0
         SoundDataSO: {fileID: 0}
-        MinVolume: 1
-        MaxVolume: 1
+        MinVolume: 0.228
+        MaxVolume: 0.521
         MinPitch: 1
         MaxPitch: 1
         MmSoundManagerTrack: 0
@@ -1038,8 +1038,8 @@ MonoBehaviour:
         SequentialOrderHoldCooldownDuration: 2
         RandomUnique: 0
         SoundDataSO: {fileID: 0}
-        MinVolume: 1
-        MaxVolume: 1
+        MinVolume: 0.402
+        MaxVolume: 0.74
         MinPitch: 1
         MaxPitch: 1
         MmSoundManagerTrack: 0

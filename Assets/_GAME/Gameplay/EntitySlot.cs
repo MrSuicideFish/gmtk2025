@@ -3,9 +3,8 @@ using UnityEngine.Events;
 
 public class EntitySlot : MonoBehaviour
 {
-    public delegate void EntitySlotEventHandler(PhysInteractable entity);
-    public event EntitySlotEventHandler OnEntityAdded;
-    public event EntitySlotEventHandler OnEntityRemoved;
+    public delegate void EntitySlotEventHandler();
+    public event EntitySlotEventHandler OnSlotChanged;
     
     public string ValidEntityTag = "Untagged";
     public Transform SlotTransform;
@@ -14,6 +13,11 @@ public class EntitySlot : MonoBehaviour
     
     public UnityEvent OnEntityAddedEvent;
     public UnityEvent OnEntityRemovedEvent;
+    
+    public PhysInteractable CurrentEntity
+    {
+        get { return m_currentEntity; }
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -36,10 +40,8 @@ public class EntitySlot : MonoBehaviour
 
                 m_currentEntity = physInteractable;
                 m_isOccupied = true;
-                OnEntityAdded?.Invoke(m_currentEntity);
+                OnSlotChanged?.Invoke();
                 OnEntityAddedEvent?.Invoke();
-                
-                Debug.Log("Entity added to slot: " + physInteractable.name);
             }
         }
     }
@@ -53,10 +55,8 @@ public class EntitySlot : MonoBehaviour
             {
                 m_currentEntity = null;
                 m_isOccupied = false;
-                OnEntityRemoved?.Invoke(physInteractable);
+                OnSlotChanged?.Invoke();
                 OnEntityRemovedEvent?.Invoke();
-                
-                Debug.Log("Entity removed from slot: " + physInteractable.name);
             }
         }
     }
