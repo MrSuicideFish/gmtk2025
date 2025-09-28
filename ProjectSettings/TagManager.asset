@@ -6,6 +6,8 @@ TagManager:
   tags:
   - RoomConnector
   - SpecialBook
+  - Toy
+  - Frame
   layers:
   - Default
   - TransparentFX
